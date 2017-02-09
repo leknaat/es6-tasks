@@ -34,6 +34,23 @@ console.log(stringInt);
 
 
 
-//modules
-import {name, age, birthYear} from 'person';
-console.log( name, age, birthYear);
+//destructuring
+var {user, clan} = {user: 'devon', clan: 'gangrel'};
+console.log(user, clan); // devon gangrel
+
+
+
+
+//default + rest + spread
+function logEach(...stuff) {
+    stuff.forEach(function (string) {
+        console.log(string);
+    });
+}
+logEach("hello", "world", "how's it hanging?");
+
+function logSpread(num1, num2, num3){
+	return num1 * num2 - num3;
+}
+var nums = [7, 8];
+console.log(logSpread(...nums, 9));
